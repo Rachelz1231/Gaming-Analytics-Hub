@@ -1,4 +1,4 @@
-# team47
+# Moba Tracker Web App
 
 ## Requirements:
 
