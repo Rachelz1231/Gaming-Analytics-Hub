@@ -2,13 +2,7 @@
 
 ## Requirements:
 
-**Server:** 
-
-The web app is already deployed on Heroku, simply visit https://timi-game-squad.herokuapp.com/ for the entire application.
-
 **Run locally (local setup):**
-
-You can enjoy full functionalities through the URL https://timi-game-squad.herokuapp.com/, but if you want to run our application locally. Here is the instruction.
 
 1. Open the terminal and type the following three commands
 
@@ -42,12 +36,117 @@ mongod --dbpath mongo-data
 
 Anyone can be registered as admin user in Register page
 
+## Features
+
+### Login/Register: 
+
+* Login
+    * If registered, input username and password, and select user type(admin or normal user)
+        * Example normal user login credential: 
+            * username: "user1"
+            * password: "user1"
+        * Example admin user login credential:
+            * username: "admin1"
+            * password: "admin1"
+    * If not registered, click "register" to register page
+![1](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/dbaa1cee-d1e7-4883-85b6-cd5b08d5621a)
+
+* Register
+    * Input email, username, and password with selected user type to register
+![3](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/8ff8e508-4d73-45cc-9808-0f60480af85f)
+
+
+### User views: 
+
+* Timeline/Forum
+    * Logged in user can post on this page
+    * Need to select the game id and champion as tag on the top dropdown list and post content can not be empty
+    * Clear button can reset user's input
+    * After clicking Post button, posts will show up with status "posted now"
+    * Logged in user can also comment on the existing posts
+    * Clicking user name link for each post will redirect to their profile
+    * Clicking the posts' champion tags and game tags show additional details
+    * Can filter base on users (favourite), game id, and champion.
+![6](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/9c3bea23-e737-48a3-88ce-faf71fea81e1)
+
+* Search
+    * The search text area can search for existing users
+        * Invalid user will result in alert of username not found
+    * below displays the logged in user's recent searches (makes checking other's profile easier)
+    * click "Favourite" displays the logged in user's favourite users (which can be used as filter for analysis and posts)
+![7](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/630a8b79-607a-424f-befd-3040fd27e98c)
+![9](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/50420555-de4c-43c0-aa35-6da48b69c6f3)
+
+* My Profile
+    * add themself in favourite list by clicking the star
+    * "Edit profile" button allow users to change their name and quote, click "save" to save the changes
+    * "Change Icon" button allow users to select images from file and click "update" will change the icon
+    * Displays logged in user's match history
+![10](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/0ff2c3fc-1dd3-4044-a2da-078fcd72de88)
+![11](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/07c74b77-e919-4b74-b3b9-90978e38bda1)
+
+* Champion Analysis
+    * Selecting the two champions will display:
+        * champion pick rate
+        * champion win rate 
+        * champion discuss rate (tagged in posts or comments)
+        * champion average kda (kill, death, assists ratio calculated from all matches with this particular champion)
+![12](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/6e51db1c-227d-48a9-90a5-aadc111bf6b3)
+
+* My Analysis
+    * displays the general analysis for all matches on the top
+    * selecting "recent n games" allows user to pick from 1 to total number of games
+    * The below 3 charts shows the respective champion/rune/spell winrate in recent n games which user selected.
+![13](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/d4b4e5ba-b45c-4d66-b1c7-f51134fb7bbc)
+
+* Other's Profile
+    * Current logged in users can add "other" in favourite list by clicking the star
+    * logged in user can click report and select reasons (first dropdown), and the corresponding post id
+    * Displays "other"'s match history by that player's id shown in URL
+![8](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/94383dd7-3d79-4c53-996b-7d2312b66f52)
+
+### Admin views:
+
+* Post Management:
+    * View posts and delete posts by clicking "delete this post"
+    * Can filter posts base on user, champion, and game id
+![14](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/f3a0c0ab-dbd3-42d5-9d6f-4a59e043abb5)
+
+* User Management:
+    * Display all users
+        * search button to search for a specific user
+    * "View details" for each user display their report history at the bottom
+    * "Clear reports" button cleans the user's match history
+    * "Delete user" button will remove the user from the app system
+![15](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/0b610ef5-971a-4728-8d9b-1bb6ec263642)
+
+* Add Games:
+    * Add 2 users that played a game, includes their champions, runes, summoners, items and performance in the game.
+      * Use "Submit" to upload the new game
+    * Will update the new game in the database
+![2](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/775c1bdd-9443-47b2-a9e3-5a0d671bcb73)
+![4](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/f5e9d401-3700-4a04-ab3f-766f00dd9ad6)
+
+* Game Management:
+    * Show all games in the database.
+      * Use "Check details" to see the complete game history
+      * Use "Delete" to delete a game from the database
+    * Can search for specific games using game id or key words for game name
+![16](https://github.com/Rachelz1231/Moba-Tracker-Web-App/assets/72637082/e372b552-1146-4aff-90b6-c896ef0cefea)
+
+* User Profile
+    * Displays a user's match history by that player's id shown in URL
+
+### Other views:
+
+* 404 Not found:
+    * When user/admin tries to access a page that doesn't exist, a page showed up displaying "404 Not Found".
+
 ## Overview of routes:
 
 ### A route to login and create a session (/user)
 
 Post request for updating current logged in user.
-
 
 ### A route to check if a user is logged in on the session (/user)
 
@@ -493,97 +592,6 @@ Expected request format:
     "report_addition": ""
 }
 ```
-
-## Instructions for using our app:
-
-### Login/Register: 
-
-* Login
-    * If registered, input username and password, and select user type(admin or normal user)
-        * Example normal user login credential: 
-            * username: "user1"
-            * password: "user1"
-        * Example admin user login credential:
-            * username: "admin1"
-            * password: "admin1"
-    * If not registered, click "register" to register page
-
-* Register
-    * Input email, username, and password with selected user type to register
-
-### User views: 
-
-* Timeline/Forum
-    * Logged in user can post on this page
-    * Need to select the game id and champion as tag on the top dropdown list and post content can not be empty
-    * Clear button can reset user's input
-    * After clicking Post button, posts will show up with status "posted now"
-    * Logged in user can also comment on the existing posts
-    * Clicking user name link for each post will redirect to their profile
-    * Clicking the posts' champion tags and game tags show additional details
-    * Can filter base on users (favourite), game id, and champion.
-* Search
-    * The search text area can search for existing users 
-        * "User1" and "User2" are hardcoded to be searched
-        * other inputs will result in alert of username not found
-    * below displays the logged in user's recent searches (makes checking other's profile easier)
-    * click "Favourite" displays the logged in user's favourite users (which can be used as filter for analysis and posts)
-* My Profile
-    * add themself in favourite list by clicking the star
-    * "Edit profile" button allow users to change their name and quote, click "save" to save the changes
-    * "Change Icon" button allow users to select images from file and click "update" will change the icon
-    * Displays logged in user's match history
-
-* Champion Analysis
-    * Selecting the two champions will display:
-        * champion pick rate
-        * champion win rate 
-        * champion discuss rate (tagged in posts or comments)
-        * champion average kda (kill, death, assists ratio calculated from all matches with this particular champion)
-    
-
-* My Analysis
-    * displays the general analysis for all matches on the top
-    * selecting "recent n games" allows user to pick from 1 to total number of games
-    * The below 3 charts shows the respective champion/rune/spell winrate in recent n games which user selected.
-
-* Other's Profile
-    * Current logged in users can add "other" in favourite list by clicking the star
-    * logged in user can click report and select reasons (first dropdown), and the corresponding post id
-    * Displays "other"'s match history by that player's id shown in URL
-
-
-### Admin views:
-
-* Post Management:
-    * View posts and delete posts by clicking "delete this post"
-    * Can filter posts base on user, champion, and game id
-
-* User Management:
-    * Display all users
-        * search button to search for a specific user
-    * "View details" for each user display their report history at the bottom
-    * "Clear reports" button cleans the user's match history
-    * "Delete user" button will remove the user from the app system
-
-* Add Games:
-    * Add 2 users that played a game, includes their champions, runes, summoners, items and performance in the game.
-      * Use "Submit" to upload the new game
-    * Will update the new game in the database
-
-* Game Management:
-    * Show all games in the database.
-      * Use "Check details" to see the complete game history
-      * Use "Delete" to delete a game from the database
-    * Can search for specific games using game id or key words for game name
-
-* User Profile
-    * Displays a user's match history by that player's id shown in URL
-
-### Other views:
-
-* 404 Not found:
-    * When user/admin tries to access a page that doesn't exist, a page showed up displaying "404 Not Found".
 
 ## Third-party libraries/frameworks:
 
