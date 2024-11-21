@@ -1,7 +1,7 @@
-# Moba Tracker Web App
+# Gaming Analytics Hub
 Group Project by Zewen Ma, Haoze Huang, Yuchen Zeng
 
-The Moba Tracker Web App is a comprehensive platform designed to enhance the gaming experience for players of multiplayer online battle arena (MOBA) games. This application provides a robust suite of features including user registration and login, profile customization, game tagging, forum discussions, and detailed analyses of game metrics such as win rates and champion performance. Users can post, comment, and search within a community-driven timeline, analyze personal game statistics, and manage game records. Admins have additional capabilities to manage user and game data effectively, ensuring a clean and enjoyable environment for all users.
+The Gaming Analytics Hub is a comprehensive platform designed to enhance the gaming experience for players of multiplayer online battle arena (MOBA) games. This application provides a robust suite of features including user registration and login, profile customization, game tagging, forum discussions, and detailed analyses of game metrics such as win rates and champion performance. Users can post, comment, and search within a community-driven timeline, analyze personal game statistics, and manage game records. Admins have additional capabilities to manage user and game data effectively, ensuring a clean and enjoyable environment for all users.
 
 ## Requirements:
 
